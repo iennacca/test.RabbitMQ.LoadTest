@@ -9,3 +9,7 @@ separate vhosts to increase the load. This is of course dependant on the environ
 need for many queues and connections if your usage will be light.
 
 See Wiki for usage information and examples
+
+--------------
+
+This is a clone of [RabbitMQ.LoadTest](https://github.com/chrisedebo/RabbitMQ.LoadTest/wiki), which I downloaded for personal archival purposes only. Honestly, I just wanted to see the message contents conming out on the logs. You should really check out chrisdebo's version for the authoritative source.
