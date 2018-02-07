@@ -62,6 +62,7 @@ namespace RabbitMQ.LoadTest.Subscriber
             {
                 int counter = 0;
                 
+                // Added message string to XMLMessage0
                 Console.WriteLine("Subscribing for thread:" + threadno + " queue:" + queues + " with id:" + "XML_subscriber" + (Convert.ToInt32(threadno) % queues).ToString());
                 //Select message type, if anyone has a better way of doing this I'd be interested to hear from you :)
                 switch (Convert.ToInt32(threadno) % queues)
