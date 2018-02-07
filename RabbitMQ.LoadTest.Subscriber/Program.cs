@@ -67,7 +67,7 @@ namespace RabbitMQ.LoadTest.Subscriber
                 switch (Convert.ToInt32(threadno) % queues)
                 {
                     case 0:
-                        bus.Subscribe<XMLMessage0>("LoadTestSubscriber", message => logger.Log(threadno.ToString()));
+                        bus.Subscribe<XMLMessage0>("LoadTestSubscriber", message => logger.Log(threadno.ToString(), message.XMLString));
                         break;
                     case 1:
                         bus.Subscribe<XMLMessage1>("LoadTestSubscriber", message => logger.Log(threadno.ToString()));

@@ -23,8 +23,10 @@ namespace RabbitMQ.LoadTest
             types[type] = 0;
         }
 
-        public void Log(string type)
+        public void Log(string type, string message = null)
         {
+            if (String.IsNullOrEmpty(message)) message = String.Empty;
+
             Interlocked.Increment(ref total);
             types[type]++;
             // 2 different logging options here. the newer, time-based one is nice when flitting between big & small messages.
@@ -32,6 +34,7 @@ namespace RabbitMQ.LoadTest
             {
                 lastLogTime = timing.ElapsedMilliseconds;
                 Console.WriteLine("Running for " + timing.Elapsed.TotalMinutes + "mins. Processed " + total + " messages at a rate of " + (total/timing.Elapsed.TotalSeconds) + " per second.");
+                Console.WriteLine("Last message was " + message);
             }
             //if (total % interval == 0)
             //    Console.WriteLine("Processed " + total + " messages at a rate of " + (total/timing.Elapsed.TotalSeconds) + " per second.");
